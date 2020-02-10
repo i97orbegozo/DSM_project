@@ -215,28 +215,62 @@
   </div>
 
   <!-- ######################## CHANGE ########################-->
-  <div class="container-sm p-5">
-      <div class="row rounded p-2"  style="background-color:lightgray; height: 425px;">
-          <div id="list-example" class="list-group col ">
-            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#video1" role="button" aria-expanded="false" aria-controls="video1">Video 1</a>
-            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#video2" role="button" aria-expanded="false" aria-controls="video2">Video 2</a>
-            <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#video3" role="button" aria-expanded="false" aria-controls="video3">Video 3</a>
-          </div>
-        
-        <div class="col">
-          <div class="collapse active" id="video1">
+  <div class="container-sm" style="padding: 50px;">
+    <div class="accordion" id="accordionExample">
+      <div class="row">
+      <div class="col-sm-6">
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Video 1
+            </button>
+          </h5>
+        </div>
+      </div>
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Video 2
+            </button>
+          </h5>
+        </div>
+      </div>
+      <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Video 3
+            </button>
+          </h5>
+        </div>
+      </div>
+    </div>
+      <div class="col-sm-6 card z-depth-0 bordered">
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+          data-parent="#accordionExample">
+          <div class="card-body">
             <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
           </div>
-          <div class="collapse" id="video2">
-            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/xeO8BFtBVCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <iframe width="420" height="345" src="https://www.youtube.com/embed/xeO8BFtBVCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="collapse" id="video3">
-            <iframe src="https://www.youtube.com/embed/xeO8BFtBVCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            <iframe width="420" height="345" src="https://www.youtube.com/embed/xeO8BFtBVCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
           </div>
         </div>
       </div>
+    </div>
+    </div>
   </div>
-
 
 
   <!-- ######################## FORMULARIO ######################## -->
