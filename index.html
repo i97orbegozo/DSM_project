@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
     <title>Orbe!</title>
   </head>
 
@@ -17,25 +20,28 @@
 
     <div class="container-sm p-3" >
       <div class="row" class="row align-items-end">
-        <div class="col">
+        <div class="col-sm-4">
           <img src="images/Logo2_alpha.png" class="figure-img img-fluid rounded" alt="HolaSoyYo">
         </div>
 
-        <div class="col " style="width: 50%;">
+        <div class="col-sm" style="width: 50%;">
           <span>
         </div>
 
+        <!--
         <div class="col" >
           <div class="dropdown float-sm-right p-3 ">
             <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown">Lenguage
             <span class="caret"></span></button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu text-dark">
               <li><a href="#">Spanish</a></li>
               <li><a href="#">English</a></li>
               <li><a href="#">French</a></li>
             </ul>
           </div>  
         </div>
+      -->
+
       </div>
     </div>
 
@@ -72,13 +78,55 @@
             <!-- Search form -->
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+              
+              
+<!--              <button class="btn btn-outline-light my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#staticBackdrop" >Search</button> -->
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-outline-light my-2 my-sm-0" data-toggle="modal" data-target="#staticBackdrop">
+                Search  
+              </button>
             </form>
             <!-- ----------- -->
+              <div class="dropdown my-2 my-lg-0" style="padding-left: 25px;">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">Language
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu text-dark">
+                  <li><a href="#">Spanish</a></li>
+                  <li><a href="#">English</a></li>
+                  <li><a href="#">French</a></li>
+                </ul>
+              </div>  
+            
           </div>
         </nav>
       </div>
   </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Search Not Found</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="images/dilbert.jpeg" class="figure-img img-fluid rounded" alt="HolaSoyYo">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-dark">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <!-- ######################## CARROUSEL ######################## -->
   <div class="container-sm p-3" class="col-md-4">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -87,15 +135,15 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
-      <div class="carousel-inner" role="listbox" style=" width:100%; height: 450px !important;">
+      <div class="carousel-inner" role="listbox" style=" width:100%;">
         <div class="carousel-item active">
-          <img src="images/games2.jpeg" class="d-block w-100" alt="">
+          <img src="images/game2.jpg" class="d-block w-100" alt="">
         </div>
         <div class="carousel-item">
-          <img src="images/games.jpeg" class="d-block w-100" alt="">
+          <img src="images/game1.jpg" class="d-block w-100" alt="">
         </div>
         <div class="carousel-item">
-          <img src="images/games3.jpeg" class="d-block w-100" alt="">
+          <img src="images/game3.jpg" class="d-block w-100" alt="">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -114,7 +162,7 @@
 
    <div class="container-sm p-3">
      <div class="row">
-      <div class="col">
+      <div class="col-sm">
         <p class="text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -122,7 +170,7 @@
           sunt in culpa qui officia deserunt mollit anim id est laborum
         </p>
       </div>
-      <div class="col">      
+      <div class="col-sm">      
         <img src="images/blend.jpeg" class="rounded" alt="blender" style=" width:100%; height: auto !important;" />
       </div>
      </div>
@@ -130,11 +178,11 @@
    
    <div class="container-sm p-3">
     <div class="row">
-     <div class="col">      
+     <div class="col-sm">      
        <img src="images/back.jpeg" class="rounded" alt="back" style=" width:100%; height: auto !important;" />
      </div>
 
-     <div class="col">
+     <div class="col-sm">
        <p class="text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -180,7 +228,7 @@
 
 
   <!-- TABLA -->
-  <div class="container-fluid p-5">
+  <div class="container-fluid p-2">
     <div class="container-sm p-5">
       <table class="table table-hover">
         <thead>
@@ -322,7 +370,56 @@
                sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
           </div>
+          <div class="col">
+            <p class="text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+               sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
         </div>
+
+        <div class="col-sm text-center content-">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-google"></a> 
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid " style="background-color: black;">
+    <div class="container-sm text-center">
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="#" class="text-white">Aviso legal y politica de protección de datos</a>
+        </div>
+        <div class="col-sm-2">
+          <a href="#" class="text-white">Copyright © 2020</a>
+        </div>
+        <div class="col-sm">
+          <a href="#" class="text-white">Bootstrap</a>
+        </div>
+        <div class="col-sm">
+          <a href="#" class="text-white">Login</a>
+        </div>
+        <div class="col-sm">
+          <a href="#" class="text-white">JVIgames</a>
+        </div>
+        <div class="col-sm">
+          <a href="#" class="text-white">Terms</a>
+        </div>
+        <div class="col-sm">
+          <a href="#" class="text-white">Partners</a>
+        </div>
+        <div class="col-sm">
+          <a href="#" class="text-white">Jobs</a>
+        </div>
+      </div>
+      
     </div>
   </div>
 
