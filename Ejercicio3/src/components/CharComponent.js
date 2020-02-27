@@ -14,10 +14,10 @@ export default class CharComponent extends React.Component{
     render(){
         return(
             <div 
-                className="btn btn-warning p-3 w-3"
+                className="btn btn-warning p-3 m-1"
                 onClick={()=> this.props.removeLetter()}
             > 
-            {this.props.letter}
+              {this.props.letter}
             </div>
             
         );

@@ -33,7 +33,7 @@ export class App extends React.Component {
           </Form>
           <label className="p-3">Number of char Inputs: {this.state.longitud}</label>
           <div className="container-sm p-2">
-            <CharList letter={this.state.text}></CharList>
+            <CharList text={this.state.text}></CharList>
           </div>
         </div>
       </div>

@@ -10,12 +10,11 @@ export default class CharList extends React.Component{
 
     render(){
         return(
-            <div className="container-sm p-3">
-            {this.state.charList.map((char, i) => {
-                return(
-                  <CharComponent key={i} letter={char}/>
-                );
-                })}
+          <div className="p-3 m-3">
+          {
+          this.props.text.split("").map((char,i) =>
+          <CharComponent key={i} letter={char}></CharComponent>)
+          }
           </div>
         );
     }
