@@ -4,16 +4,13 @@ import CharComponent from './CharComponent'
 
 export default class CharList extends React.Component{
 
-    removeHendler(){
-
-    }
 
     render(){
         return(
           <div className="p-3 m-3">
           {
           this.props.text.split("").map((char,i) =>
-          <CharComponent key={i} letter={char}></CharComponent>)
+          <CharComponent parent={this.props.parent} key={i} index={i} letter={char}></CharComponent>)
           }
           </div>
         );

@@ -23,8 +23,14 @@ export class App extends React.Component {
       longitud: event.target.value.split('').length
     })
   }
+
+  removeLetterHandler(index){
+    this.setState({
+      text: this.state.text.split("").filter( (char,i) => i !== index).join("")
+    })
+  }
+
   render(){
-    console.log(this.state.text);
     return (
       <div className="App">
         <div className="container-sm p-5 text-center">
@@ -33,7 +39,7 @@ export class App extends React.Component {
           </Form>
           <label className="p-3">Number of char Inputs: {this.state.longitud}</label>
           <div className="container-sm p-2">
-            <CharList text={this.state.text}></CharList>
+            <CharList parent={this} text={this.state.text}></CharList>
           </div>
         </div>
       </div>

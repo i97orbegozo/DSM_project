@@ -15,7 +15,7 @@ export default class CharComponent extends React.Component{
         return(
             <div 
                 className="btn btn-warning p-3 m-1"
-                onClick={()=> this.props.removeLetter()}
+                onClick={()=> this.props.parent.removeLetterHandler(this.props.index)}
             > 
               {this.props.letter}
             </div>
