@@ -1,6 +1,8 @@
 import React from 'react';
 import {Switch,Route, Redirect} from 'react-router-dom';
 
+import Navigator from './components/Navigator';
+import Cart from './containers/Cart';
 import Orders from './containers/Orders';
 import OrderProcess from './containers/OrderProcess';
 import Shop from './containers/Shop';
@@ -13,6 +15,9 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
+        <Navigator>
+          <Cart></Cart>
+        </Navigator>
         <Switch>
           <Route exact path={ROUTES.SHOP}
                   render={(props) => <Shop{...props}/>}  />

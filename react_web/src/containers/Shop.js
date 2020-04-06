@@ -2,12 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import {Row} from 'react-bootstrap';
 
+import store from '../Store';
 
 import Products from '../components/Products/Products';
-import Navigator from "../components/Navigator";
-import Cart from "../containers/Cart";
-import CartList from '../components/Cart/CartList';
-
 
 export default class Shop extends React.Component {
 
@@ -16,9 +13,15 @@ export default class Shop extends React.Component {
         this.state = {
             products: [],
             cart: [],
-            totalPrice: 0,
             error: false
         }
+
+        store.subscribe(()=> {
+            this.setState({
+                cart: store.getState().cart,
+                totalPrice: store.getState().totalPrice
+            });
+        });
     }
 
     componentDidMount() {
@@ -96,10 +99,18 @@ export default class Shop extends React.Component {
         }           
         alert('Saved items in the cart')
         this.setState({
+            cart: allObjects
+        });
+        // con redux
+        store.dispatch({
+            type: "ADD_TO_CART",
             cart: allObjects,
             totalPrice: this.calculateTotal(allObjects)
-        });
+        })
+
     }
+
+    // Calculate Total -------------------------------------
 
     calculateTotal(cart){
         let counter = 0;
@@ -107,18 +118,6 @@ export default class Shop extends React.Component {
             counter = counter + parseFloat(cart[i].numItems) * parseFloat(cart[i].price);
         }   
         return parseFloat(counter).toFixed(2);
-    }
-
-    deleteCartItem = (event,idb) => {        
-        const cartObjIndx = this.state.cart.findIndex( p =>{
-            return p.idb === idb;
-        });
-        const cart = this.state.cart
-        cart.splice(cartObjIndx,1);
-        this.setState({
-            cart: cart,
-            totalPrice: this.calculateTotal(cart)
-        });
     }
 
     // Render -------------------------------------------------
@@ -137,22 +136,9 @@ export default class Shop extends React.Component {
                         />
                 ;
         }
-        let cartProducts = <h5 style={{ textAlign: 'center' }}> No items added to the cart</h5>
-        if(this.state.cart.length !== 0 ){
-            cartProducts = <CartList
-                    productList={this.state.cart}
-                    totalPrice={this.state.totalPrice}
-                    deleteCartItem={this.deleteCartItem}>
-                </CartList>;
-        }
+        
         return( 
             <>
-            <Navigator>
-                <Cart>
-                    {cartProducts}
-                </Cart>
-            </Navigator>
-            
             <div className="container-sm text-center">
                 <Row className="p-1 column-break-inside">
                     {productBox}

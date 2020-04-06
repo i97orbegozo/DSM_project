@@ -1,25 +1,25 @@
 import React from 'react';
-import CartProduct from './CartProduct';
+import OrderItem from './OrderItem';
 
 
-export default class CartList extends React.Component{
-
+export default class OrderList extends React.Component{
+    
     render(){
-        const cartLista =  this.props.productList.map((list, i) => {
-            return <CartProduct
+        const orderList =  this.props.orderList.map((list, i) => {
+            return <OrderItem
                 image={list.image}
                 productName={list.title}
                 numItems={list.numItems}
                 price={list.price}
-                delete={(event) => this.props.deleteCartItem(event,list.idb)}
             />
         }); 
         
         return( 
             <>
-            {cartLista}    
+            {orderList}    
             <div style={{ textAlign: 'right'}}>Total:    {this.props.totalPrice} $</div>
             </>
         );
     }
+
 }
